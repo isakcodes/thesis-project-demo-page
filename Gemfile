@@ -2,10 +2,10 @@
 
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9.0"
+gem 'jekyll', '~> 4.3', '>= 4.3.3'
 
-gem "jekyll-theme-cayman", "~> 0.1.1"
+gem 'jekyll-theme-cayman', '~> 0.2.0'
 
-gem "jekyll-seo-tag", github: "jekyll/jekyll-seo-tag"
+gem 'jekyll-seo-tag', '~> 2.8'
 
-gem "kramdown-parser-gfm", "~> 1.1"
+gem 'kramdown-parser-gfm', '~> 1.1'
