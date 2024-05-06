@@ -1,6 +1,6 @@
-# `html-midi-player` website
+# thesis-project-demo-page Github Pages
 
-This is the source code for https://cifkao.github.io/html-midi-player/. It is given here as an example of including `html-midi-player` in a website built using tools like the [Parcel](https://parceljs.org/) bundler and the [Jekyll](https://jekyllrb.com/) static site generator.
+[https://isakcodes.github.io/thesis-project-demo-page/](https://isakcodes.github.io/thesis-project-demo-page/)
 
 To use it, install all the dependencies:
 - `bundle install` for the Ruby dependencies (you may need to install Bundler 2.3.12 first)
