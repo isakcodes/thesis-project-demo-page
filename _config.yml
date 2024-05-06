@@ -1,0 +1,39 @@
+title: "Demo page"
+tagline: "Chord-conditioned melody generation"
+description: "Demo page for thesis project on Chord-conditioned melody generation on symbolic music."
+
+github:
+  is_project_page: true
+  repository_name: Chord-conditioned melody generation
+  repository_url: https://github.com/isakcodes/html-midi-player
+  owner_name: Isak Engström
+  owner_url: https://github.com/isakcodes
+  project_tagline: "Demo page | Thesis Project"
+
+theme: jekyll-theme-cayman
+
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+baseurl: /html-midi-player/
+
+exclude:
+  - README.md
+  - assets/js
+  - node_modules
+  - vendor
+  - Gemfile.lock
+  - package.json
+  - yarn.lock
+  - yarn-error.log
+
+keep_files:
+  - assets/js

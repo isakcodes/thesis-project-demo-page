@@ -1,0 +1,223 @@
+---
+---
+
+@import 'jekyll-theme-cayman';
+@import 'main';
+
+:root {
+  --white: #fefefe;
+  --navy: #1A2238;
+  --violet: #9DAAF2;
+  --orange: #FF6A3D;
+  --yellow: #F4DB7D;
+  --body-bg: #ebe5e2;
+  --body-color: #3f3f3f;
+  --body-link-color: #AC3B61;
+  --card-bg: #eeeeee;
+  --h-color:#141414;
+  --black: #000;
+  --grey: #c9c9c9;
+  --default-green-1: #2b8ca2;
+  --default-green-2: #002c46;
+  --nt: #7b9726;
+  --na: #407ee7;
+  --s: #f22c40;
+}
+
+body.manual-dark-mode.dark-mode {
+  --body-bg: #1a1a1a;
+  --body-color: #E2E8E4;
+  --body-link-color: #FFCCBB;
+  --card-bg: #232323;
+  --h-color: #e6e6e6;
+  --grey: #303030;
+  --nt: #7b9726;
+  --na: #407ee7;
+  --s: #f22c40;
+}
+
+@media (prefers-color-scheme: dark) {
+  body:not(.manual-dark-mode) {
+    --body-bg: var(--body-bg);
+    --body-color: var(--body-color);
+    --body-link-color: var(--body-link-color);
+    --card-bg: var(card-bg);
+  }
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--body-color);
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: var(--h-color);
+}
+
+.main-content .highlight {
+  background-color: var(--card-bg);
+}
+
+.main-content .highlight .nt {
+  color: var(--nt)
+}
+.main-content .highlight .na {
+  color: var(--na)
+}
+.main-content .highlight .s {
+  color: var(--s)
+}
+
+#darkModeToggleContainer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#highlight {
+  color: var(--card-bg);
+}
+
+#darkModeToggle {
+  opacity: 1.0;
+  color: inverse(var(--body-bg));
+  border-color: var(--border-color);
+  /*color: var(--violet);
+  transition: 0.1s ease;
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  
+  font-size: 16px;
+  border-radius: 5px;*/
+}
+
+/*#darkModeToggle:hover {
+  background-color: var(--violet);
+  color: var(--navy);
+}*/
+
+.page-header {
+  color: #fff;
+  background-color: var(--h-color);
+  background-image: linear-gradient(120deg, var(--default-green-1), var(--default-green-2));
+}
+
+/* Tab links */
+.tab button {
+  background-color: var(--grey);
+  color: var(--h-color);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  /*transition: 0.3s ease;*/
+  font-size: 14px;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  /*background-color: var(--h-color);*/
+  color: var(--card-bg);
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: var(--card-bg);
+  color: var(--h-color);
+  opacity: 1.0;
+  margin: 1px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: -1px;
+  border: 1px solid var(--h-color);
+  border-bottom: 1px solid var(--card-bg);
+}
+
+/* Custom player style */
+#player midi-player {
+  display: block;
+  width: inherit;
+  margin-bottom: 0;
+  color: var(--h-color);
+  border: none;
+}
+
+#mainVisualizer {
+  border-radius: 1px;
+  border: 1px solid var(--h-color);
+  border-bottom: 0px;
+  background: var(--h-color);
+}
+
+#player midi-player::part(control-panel) {
+  background: var(--card-bg);
+  border: 1px solid var(--h-color);
+  /*border-radius: 0px 0px 10px 10px;*/
+}
+#player midi-player::part(play-button) {
+  color: #353;
+  border: 2px solid currentColor;
+  background-color: var(--violet);
+  border-radius: 20px;
+  transition: all 0.2s;
+  content: 'hello';
+}
+#player midi-player::part(play-button):hover {
+  color: #0a0;
+  background-color: #5f5;
+  border-radius: 10px;
+}
+#player midi-player::part(time) {
+  font-family: monospace;
+}
+
+/* Custom visualizer style */
+#player midi-visualizer .piano-roll-visualizer {
+  background: var(--card-bg);
+  /*border-top: none;*/
+  /*margin-top: 5px;*/
+  overflow: auto;
+}
+#player midi-visualizer svg rect.note {
+  opacity: 0.2;
+  stroke-width: 0;
+}
+#player midi-visualizer svg rect.note[data-instrument="0"]{
+  fill: var(--orange);
+  stroke: var(--navy);
+}
+#player midi-visualizer svg rect.note[data-instrument="2"]{
+  fill: var(--violet);
+  stroke: var(--navy);
+}
+#player midi-visualizer svg rect.note[data-is-drum="true"]{
+  fill: #888;
+  stroke: #888;
+}
+#player midi-visualizer svg rect.note.active {
+  opacity: 1.0;
+  stroke: #000;
+  stroke-width: 4;
+}
+
+.scrollable {
+  height: 300px;
+  overflow-y: scroll;
+  margin-bottom: 10px;
+}
+
+/*.text-note {
+  margin-left: 10px;
+  margin-right: 10px;
+}*/
+
+.site-footer {
+  color: var(--grey);
+}
