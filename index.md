@@ -1,6 +1,6 @@
 ---
 ---
-Welcome! This site is under development...
+Welcome! This site is under development.
 
 <!--
 <p>
